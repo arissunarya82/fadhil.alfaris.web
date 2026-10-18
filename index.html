@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPBD Kabupaten Bogor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #1e3a8a;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 80px;
+        }
+        #beranda {
+            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 120px 0;
+        }
+        #beranda h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        #beranda p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2563eb;
+        }
+        h2.section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            color: #1e3a8a;
+        }
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #3b82f6;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .profile-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .profile-text {
+            flex: 1;
+        }
+        .profile-text p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+        .contact-container {
+            display: flex;
+            gap: 40px;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info h3 {
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        .contact-form {
+            flex: 1;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .profile-content, .contact-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>BPBD Kabupaten Bogor</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#layanan">Layanan</a></li>
+                    <li><a href="#kontak">Kontak Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="beranda">
+        <div class="container">
+            <h2>BPBD Kabupaten Bogor</h2>
+            <p>Pembentukan BPBD Kabupaten Bogor yang ditetapkan pada tanggal 23 Maret 2010.<p>
+            <p>Selanjutnya terhitung mulai tanggal 11 Januari 2011 BPBD Kabupaten Bogor mulai beroperasi yang ditandai dengan pelantikan pejabat struktural BPBD Kabupaten Bogor mulai dari Eselon II, III dan IV.<p>
+            <p>Berdasarkan Peraturan Daerah Kabupaten Bogor Nomor 2 Tahun 2010 tentang Pembentukan Badan Penanggulangan Bencana Daerah (BPBD), BPBD merupakan perangkat daerah sebagai unsur pendukung penyelenggaraan pemerintahan daerah yang dipimpin oleh Kepala Badan yang berada di bawah dan bertanggung jawab kepada Bupati.</p>
+            <a href="#kontak" class="btn">Konsultasi</a>
+        </div>
+    </section>
+
+    <section id="profil" style="background-color: #fff;">
+        <div class="container">
+            <h2 class="section-title">Profil</h2>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <p><strong>Badan Penanggulangan Bencana Daerah (BPBD) Kabupaten Bogor adalah lembaga pemerintah daerah yang bertanggung jawab penuh dalam koordinasi, komando, dan pelaksanaan penanggulangan bencana di wilayah Kabupaten Bogor. Wilayah ini secara geografis rawan terhadap bencana seperti tanah longsor, angin puting beliung, dan banjir karena didominasi oleh dataran tinggi/perbukitan serta memiliki curah hujan tinggi.</p>
+    </section>
+
+    <section id="layanan">
+        <div class="container">
+            <h2 class="section-title">Layanan Darurat</h2>
+            <p>Bagi masyarakat yang membutuhkan penanganan darurat atau ingin melaporkan kejadian bencana di wilayah Kabupaten Bogor, hubungi saluran resmi berikut:<p>
+            </p>Call Center Utama / WhatsApp: 0812-1010-9002<p>
+            </p>Layanan Darurat Terpadu: 112<p>
+            </p>Telepon Kantor: (021) 87914800<p>
+            </p>Alamat Kantor: Jl. Tegar Beriman No. 1, Pakansari, Cibinong, Kabupaten Bogor<p>
+            </p>Situs Resmi: Website BPBD Kabupaten Bogor<p>
+            </p>Media Sosial: Instagram @bpbdkabbogor | X @bpbd_kabbogor | Facebook BPBD Kabupaten Bogor</p>    
+    </section>
+
+    <section id="kontak" style="background-color: #fff;">
+        <div class="container">
+            <h2 class="section-title">Kontak Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <br>
+                    <p><strong>📍 Alamat Kantor:</strong></p>
+                    <p>Jl. Tegar Beriman No. 1 Pakansari - Cibinong</p>
+                    <br>
+                    <p><strong>📞 Telepon / WhatsApp:</strong></p>
+                    <p>+62 812-1010-9002</p>
+                    <br>
+                    <p><strong>📧 Email Resmi:</strong></p>
+                    <p>bpbd@bogorkab.go.id - bpbdbogor@gmail.com</p>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="alert('Terima kasih! Pesan Anda telah terkirim.'); return false;">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" required placeholder="Masukkan nama Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" id="email" required placeholder="Masukkan email Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan Anda</label>
+                            <textarea id="message" required placeholder="Tuliskan kebutuhan bisnis atau pertanyaan Anda..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="border: none; width: 100%; cursor: pointer;">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 BPBD Kabupaten Bogor.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
